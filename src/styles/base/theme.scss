@@ -1,0 +1,38 @@
+@import 'theme-variables';
+// Imports are kept at the bottom because variables in these files have the !default
+// flag set which means that they will NOT override values set before it, therefore we
+// import these last and set our overrides before.
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+@import '~bootswatch/flatly/_bootswatch';
+
+// selector-based overrides can go below here (after bootstrap so it takes precedence)
+
+// hr is based on line-height :(
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+// color code refs for iteration
+$color-codes: danger info success warning;
+$alert-colors: $alert-danger-text $alert-info-text $alert-success-text $alert-warning-text;
+
+// in <Alert>s regular text is fine but <a>'s global text color is taking
+// precedence. unless we change the <a>'s global color to something with a
+// better contrast, let's make links the same color as alert text color
+@each $color-code in $color-codes {
+  .alert-#{$color-code} a {
+    color: nth($alert-colors, index($color-codes, $color-code));
+  }
+}
+
+// btn-white: when you just want a non-controversial color
+.btn-white {
+  // text color, background, border
+  @include button-variant(#444, #fff, #eee);
+}
+
+//custom adjustments to standard bootstrap classes
+.help-block {
+  color: $brand-primary;
+}

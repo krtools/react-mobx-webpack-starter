@@ -1,0 +1,12 @@
+// bootstrap theme config. importing the bootswatch flatly theme
+// with potential variables overrides below.
+// Variable import at top so we can leverage existing vars e.g. $color:lighten($another, ..)
+@import '~bootswatch/flatly/_variables';
+
+// provides asset path relative to loaded path (it's a bundling thing)
+$bootstrap-sass-asset-helper: true;
+
+// default is 15px (yikes)
+$panel-body-padding: 8px;
+
+$border-thickness: 2px;

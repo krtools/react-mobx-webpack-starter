@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "es2016",
+    "es2017",
+    "react",
+    "stage-2"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "react-hot-loader/babel"
+  ]
+}
